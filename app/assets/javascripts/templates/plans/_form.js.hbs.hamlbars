@@ -1,0 +1,17 @@
+.form-horizontal
+  .control-group{:bind => {:class => 'content.errorData.isNameError:error :control-group' }}
+    %label.control-label Name
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'content.name'
+  .control-group{:bind => {:class => 'content.errorData.isStartDateError:error :control-group' }}
+    %label.control-label Start date
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'start_date_value', :classNames => 'fast-start_date'
+  .control-group{:bind => {:class => 'content.errorData.isEndDateError:error :control-group' }}
+    %label.control-label End date
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'end_date_value', :classNames => 'fast-end_date'
+  .control-group
+    %label.control-label Description
+    .controls
+      =hb 'view Ember.TextArea', :valueBinding => 'content.description'

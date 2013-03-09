@@ -1,0 +1,32 @@
+.navbar.navbar-static-top
+  .navbar-inner
+    %ul.nav
+      %li.divider-vertical
+      %li
+        =hb 'linkTo home' do
+          Home
+      %li.divider-vertical
+      =hb 'linkTo accounts.index',  :tagName => 'li' do
+        %a{:bind => {:href => "view.href"}}
+          Accounts
+      %li.divider-vertical
+      =hb 'linkTo categories.index',  :tagName => 'li' do
+        %a{:bind => {:href => "view.href"}}
+          Categories
+      %li.divider-vertical
+      =hb 'linkTo transactions.index',  :tagName => 'li' do
+        %a{:bind => {:href => "view.href"}}
+          Transactions
+      %li.divider-vertical
+      =hb 'linkTo aims.index',  :tagName => 'li' do
+        %a{:bind => {:href => "view.href"}}
+          Targets
+      %li.divider-vertical
+      =hb 'linkTo plans.index',  :tagName => 'li' do
+        %a{:bind => {:href => "view.href"}}
+          Plans
+    %ul.nav.pull-right
+      %li
+        %a{:href => '#', :event => {:action => 'doSignOut'}} Sign out
+=hb 'outlet'
+=hb 'outlet modal'

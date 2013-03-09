@@ -1,0 +1,45 @@
+%h4 Plans
+%table.table
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        .pull-right
+          Planned
+      %th
+        .pull-right
+          Actual
+      %th
+        .pull-right
+          From
+      %th
+        .pull-right
+          To
+  %tbody
+    =hb 'each plan in plans' do
+      %tr
+        %td
+          =hb 'linkTo plan.edit plan' do
+            .icon-edit{:title => 'Edit'}
+          =hb 'linkTo plan.details plan' do
+            {{plan.name}}
+          =hb 'if plan.default' do
+            .label.label-info
+              Default
+        %td
+          .pull-right
+            {{plan.planned_sum}}
+        %td
+          .pull-right
+            {{plan.actual_sum}}
+        %td
+          .pull-right
+            {{plan.start_date_fmt}}
+        %td
+          .pull-right
+            {{plan.end_date_fmt}}
+.form-actions
+  .pull-right
+    =hb 'linkTo plans.new', :classNames => 'btn' do
+      New

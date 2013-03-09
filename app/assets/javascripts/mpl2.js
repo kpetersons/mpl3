@@ -1,0 +1,9 @@
+//= require ./store
+//= require ./models/all
+//= require ./controllers/all
+//= require ./views/all
+//= require_tree ./helpers
+//= require_tree ./templates
+//= require ./router
+//= require_tree ./routes
+//= require_self

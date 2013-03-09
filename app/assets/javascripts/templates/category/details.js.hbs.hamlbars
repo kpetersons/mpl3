@@ -1,0 +1,11 @@
+%h4
+  {{name}} category transactions
+  1
+  =hb 'content.isDirty'
+=hb 'partial "category/transaction/index"'
+.form-actions
+  .btn-group.pull-right
+    =hb 'linkTo category.transactions.new content', :classNames => 'btn btn-primary' do
+      New transaction
+    =hb 'linkTo categories.index', :classNames => 'btn' do
+      Close

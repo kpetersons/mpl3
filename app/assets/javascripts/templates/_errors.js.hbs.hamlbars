@@ -1,0 +1,6 @@
+=hb 'unless isValid' do
+  .alert.alert-error
+    =hb 'each error in modelErrors' do
+      %div
+        =hb 'error.name'
+        =hb 'error.message'

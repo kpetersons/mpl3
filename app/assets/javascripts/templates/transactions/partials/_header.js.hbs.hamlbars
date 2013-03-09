@@ -1,0 +1,12 @@
+%thead
+  %tr
+    %th
+      Account
+    %th
+      Category
+    %th.span2
+      .pull-right
+        When
+    %th.span2
+      .pull-right
+        Amount

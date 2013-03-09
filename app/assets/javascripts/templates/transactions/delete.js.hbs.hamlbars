@@ -1,0 +1,8 @@
+.modal-header
+  %h5 Confirm
+.modal-body
+  Are you sure you want to delete transaction?
+.modal-footer
+  .btn-group.pull-right
+    %a.btn.btn-danger{:href => '#', :_action => 'doDelete controller.content target="controller"' } Delete
+    %a.btn{:href => '#', :_action => 'doCancel  controller.content target="controller"' } Cancel

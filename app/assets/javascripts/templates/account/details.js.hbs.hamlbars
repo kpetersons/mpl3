@@ -1,0 +1,9 @@
+%h4
+  {{name}} account
+=hb 'partial "account/transaction/index"'
+.form-actions
+  .btn-group.pull-right
+    =hb 'linkTo account.transactions.new content', :classNames => 'btn btn-primary' do
+      New transaction
+    =hb 'linkTo accounts.index', :classNames => 'btn' do
+      Close

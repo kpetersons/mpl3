@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require twitter/bootstrap
+//= require bootstrap-datepicker
+//= require moment
+//= require moment-range
+//= require accounting
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require mpl2
+Mpl2 = Ember.Application.create()
+//= require_tree .

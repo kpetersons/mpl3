@@ -1,0 +1,17 @@
+%table.table
+  =hb 'partial "transactions/partials/header"'
+  %tbody
+    =hb 'each transaction in transactions' do
+      %tr
+        %td
+          =hb 'linkTo category.transaction.edit content transaction' do
+            .icon-edit{:title => 'Edit'}
+          {{transaction.account.name}}
+        %td
+          {{transaction.category.name}}
+        %td
+          .pull-right
+            {{transaction.date_when_fmt}}
+        %td
+          .pull-right
+            {{transaction.amount_fmt}}

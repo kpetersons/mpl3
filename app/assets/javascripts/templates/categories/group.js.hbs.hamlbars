@@ -1,0 +1,9 @@
+.modal-header
+  %h5 Group
+=hb 'partial "errors"'
+.modal-body
+  =hb 'partial "categories/form"'
+.modal-footer
+  .btn-group.pull-right
+    %a.btn.btn-primary{:href => '#', :_action => 'doSave content' } Save
+    %a.btn{:href => '#', :_action => 'doCancel  content' } Cancel

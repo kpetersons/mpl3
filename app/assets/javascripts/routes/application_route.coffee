@@ -1,0 +1,1 @@
+Mpl2.ApplicationRoute = Ember.Route.extend()

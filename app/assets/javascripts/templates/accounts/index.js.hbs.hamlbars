@@ -1,0 +1,33 @@
+%h4 Accounts
+%table.table
+  %thead
+    %tr
+      %th
+        Name
+      %th.span2
+        .pull-right
+          This week
+      %th.span2
+        .pull-right
+          This month
+  %tbody
+    =hb 'each account in accounts' do
+      %tr
+        %td
+          =hb 'linkTo account.edit account' do
+            .icon-edit{:title => 'Edit'}
+          =hb 'linkTo account.details account' do
+            {{account.name}}
+          =hb 'if account.default' do
+            .label.label-info
+              Default
+        %td
+          .pull-right
+            {{account.transactions_week_sum}}
+        %td
+          .pull-right
+            {{account.transactions_month_sum}}
+.form-actions
+  .pull-right
+    =hb 'linkTo accounts.new', :classNames => 'btn' do
+      New

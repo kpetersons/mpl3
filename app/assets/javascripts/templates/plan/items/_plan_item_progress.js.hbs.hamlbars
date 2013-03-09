@@ -1,0 +1,7 @@
+.progress
+  =hb 'if view.isOverused' do
+    .bar{:bind => {:style => 'view.planned_pct'}}
+    .bar.bar-danger{:bind => {:style => 'view.actual_pct'}}
+  =hb 'unless view.isOverused' do
+    .bar.bar-success{:bind => {:style => 'view.actual_pct'}}
+    .bar{:bind => {:style => 'view.planned_pct'}}

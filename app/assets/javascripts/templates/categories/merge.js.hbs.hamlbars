@@ -1,0 +1,8 @@
+.modal
+  .modal-header
+    %h5 Edit
+  =hb 'partial "errors"'
+  .modal-body
+    =hb 'partial "categories/form"'
+  .modal-footer
+    =hb 'partial "form_buttons"'

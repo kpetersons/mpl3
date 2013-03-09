@@ -1,0 +1,59 @@
+%h4 Targets
+%table.table
+  %thead
+    %tr
+      %th
+        Name
+      %th
+        Category
+      %th
+        From
+      %th
+        To
+      %th.span3
+      %th
+        .pull-right
+          Target
+      %th
+        .pull-right
+          This week
+      %th
+        .pull-right
+          This month
+  %tbody
+    =hb 'each aim in aims' do
+      %tr
+        %td
+          =hb 'linkTo aim.edit aim' do
+            .icon-edit{:title => 'Edit'}
+          =hb 'linkTo aim.details aim' do
+            {{aim.name}}
+        %td
+          {{aim.category.name}}
+        %td
+          %div{:rel => :tooltip, :bind => {:title => 'aim.from_date_fmt_long'}}
+            {{aim.from_date_fmt}}
+        %td
+          %div{:rel => :tooltip, :bind => {:title => 'aim.target_date_fmt_long'}}
+            {{aim.target_date_fmt}}
+        %td
+          =hb 'unless aim.is_overused' do
+            .progress
+              .bar{:bind => {:style => 'aim.pct_actual_less_sum'}}
+          =hb 'if aim.is_overused' do
+            .progress
+              .bar{:bind => {:style => 'aim.pct_target_sum'}}
+              .bar.bar-danger{:bind => {:style => 'aim.pct_actual_more_sum'}}
+        %td
+          .pull-right
+            {{aim.amount_sum}}
+        %td
+          .pull-right
+            {{aim.transactions_week_sum}}
+        %td
+          .pull-right
+            {{aim.transactions_month_sum}}
+.form-actions{:colspan => 8}
+  .pull-right
+    =hb 'linkTo aims.new', :classNames => 'btn' do
+      New

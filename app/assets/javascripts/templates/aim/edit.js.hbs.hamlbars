@@ -1,0 +1,6 @@
+.modal-header
+  %h5 Edit
+.modal-body
+  =hb 'partial "aims/form"'
+.modal-footer
+  =hb 'partial "form_buttons"'

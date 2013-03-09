@@ -1,0 +1,26 @@
+%table.table.plan-details.table-condensed
+  %thead
+    %tr
+      %th.span2
+        Category
+      %th.span6
+        &nbsp;
+      %th.span1
+        .pull-right
+          Planned
+      %th.span1
+        .pull-right
+          Actual
+  %tbody
+    =hb 'each plan_item in this  itemController="planItemItem"' do
+      = hb 'view Mpl2.PlanItemItemView', :tagName => 'tr' do
+        %td.span2
+          =hb 'content.category.name'
+        %td.span8
+          =hb 'partial "plan/items/plan_item_progress"'
+        %td.span1
+          .pull-right
+            =hb 'view Ember.TextField', :valueBinding => 'planned_value', :classNames => 'span1'
+        %td.span1
+          .pull-right
+            =hb 'transactions_all_sum'

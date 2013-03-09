@@ -1,0 +1,9 @@
+%h4
+  {{name}} target for {{category.name}}
+=hb 'partial "aim/transaction/index"'
+.form-actions
+  .btn-group.pull-right
+    =hb 'linkTo aim.transactions.new content', :classNames => 'btn btn-primary' do
+      New transaction
+    =hb 'linkTo aims.index', :classNames => 'btn' do
+      Close

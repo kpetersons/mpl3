@@ -1,0 +1,28 @@
+%table.table
+  %thead
+    %tr
+      %th
+        Account
+      %th
+        Category
+      %th.span2
+        .pull-right
+          When
+      %th.span2
+        .pull-right
+          Amount
+  %tbody
+    =hb 'each transaction in content.transactions' do
+      %tr
+        %td
+          =hb 'linkTo categories.transactions.edit content transaction' do
+            .icon-edit{:title => 'Edit'}
+          {{transaction.account.name}}
+        %td
+          {{transaction.category.name}}
+        %td
+          .pull-right
+            {{transaction.date_when_fmt}}
+        %td
+          .pull-right
+            {{transaction.amount_fmt}}

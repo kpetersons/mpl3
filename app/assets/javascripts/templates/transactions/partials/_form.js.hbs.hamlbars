@@ -1,0 +1,21 @@
+.form-horizontal
+  .control-group{:bind => {:class => 'content.errorData.isAccountError:error :control-group' }}
+    %label.control-label Account
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'account_value', :classNames => 'fast-account'
+  .control-group{:bind => {:class => 'content.errorData.isCategoryError:error :control-group' }}
+    %label.control-label Category
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'category_value', :classNames => 'fast-category'
+  .control-group{:bind => {:class => 'content.errorData.isAmountError:error :control-group' }}
+    %label.control-label Amount
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'amount_value', :classNames => 'number'
+  .control-group{:bind => {:class => 'content.errorData.isDateWhenError:error :control-group' }}
+    %label.control-label Date when
+    .controls
+      =hb 'view Ember.TextField', :valueBinding => 'date_when_value', :classNames => 'fast-date_when'
+  .control-group
+    %label.control-label Description
+    .controls
+      =hb 'view Ember.TextArea', :valueBinding => 'description'

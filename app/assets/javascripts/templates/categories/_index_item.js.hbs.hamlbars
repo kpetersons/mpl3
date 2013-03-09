@@ -1,0 +1,17 @@
+%tr{:_action => 'doSelect category target="controller"', :bind => { :class => 'content.isSelected:info'}}
+  %td
+    =hb 'if isGroup' do
+      %a{:href => '#', :_action => 'doExpand category target="controller"'}
+        .icon-chevron-right
+    =hb 'linkTo category.edit content' do
+      .icon-edit{:title => 'Edit'}
+    =hb 'linkTo category.details content' do
+      {{content.name}}
+  %td
+    .pull-right
+      {{content.transactions_week_sum}}
+  %td
+    .pull-right
+      {{content.transactions_month_sum}}
+      =hb 'linkTo category.delete content' do
+        .icon-trash

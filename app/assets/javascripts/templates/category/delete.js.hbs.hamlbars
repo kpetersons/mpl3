@@ -1,0 +1,11 @@
+.modal-header
+  %h5
+    Delete
+    =hb 'content.name'
+=hb 'partial "errors"'
+.modal-body
+  Are you sure you want to delete this account?
+.modal-footer
+  .btn-group.pull-right
+    %a.btn.btn-danger{:href => '#', :_action => 'doSave content' } Delete
+    %a.btn{:href => '#', :_action => 'doCancel  content' } Cancel

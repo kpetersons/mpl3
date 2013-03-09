@@ -1,0 +1,38 @@
+%h4 Transactions
+%table.table
+  %thead
+    %tr
+      %th
+        Account
+      %th
+        Category
+      %th.span2
+        .pull-right
+          When
+      %th.span2
+        .pull-right
+          Amount
+      %th.span1
+  %tbody
+    =hb 'each transaction in transactions' do
+      %tr
+        %td
+          =hb 'linkTo transaction.edit transaction' do
+            .icon-edit{:title => 'Edit'}
+          {{transaction.account.name}}
+        %td
+          {{transaction.category.name}}
+        %td
+          .pull-right{:rel => :tooltip, :bind => {:title => 'transaction.date_when_fmt_long'}}
+            {{transaction.date_when_fmt}}
+        %td
+          .pull-right
+            {{transaction.amount_fmt}}
+        %td
+          .pull-right
+            =hb 'linkTo transaction.delete transaction' do
+              .icon-trash
+.form-actions
+  .btn-group.pull-right
+    =hb 'linkTo transactions.new', :classNames => 'btn' do
+      New

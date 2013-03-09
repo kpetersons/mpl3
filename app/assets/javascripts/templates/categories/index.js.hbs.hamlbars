@@ -1,0 +1,33 @@
+%h4 Categories
+%table.table
+  %thead
+    %tr
+      %th
+        Name
+      %th.span2
+        .pull-right
+          This week
+      %th.span2
+        .pull-right
+          This month
+  %tbody
+    =hb 'each category in categories itemController="categoryIndexItem"' do
+      =hb 'partial "categories/index_item"'
+      =hb 'if isGroup' do
+        =hb 'each category in categories itemController="categoryIndexItem"' do
+          =hb 'partial "categories/index_item"'
+.form-actions{:colspan => 4}
+  =hb 'if isAnySelected' do
+    .btn-group.pull-left
+      =hb 'linkTo categories.group', :classNames => 'btn' do
+        Group
+      %a.btn{:href => '#', :_action => 'doMerge controller.content' } Merge
+    =hb 'else'
+    .btn-group.pull-left
+      .btn.disabled Group
+      .btn.disabled Merge
+  .btn-group.pull-right
+    =hb 'linkTo categories.newIncome', :classNames => 'btn btn-primary' do
+      New income
+    =hb 'linkTo categories.newExpense', :classNames => 'btn' do
+      New expense

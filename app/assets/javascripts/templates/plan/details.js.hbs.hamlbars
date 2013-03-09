@@ -1,0 +1,9 @@
+%h4
+  {{name}}
+=hb 'with content.plan_items' do
+  =hb 'partial "plan/items/index"'
+.form-actions
+  .btn-group.pull-right
+    %a.btn.btn-primary{:href => '#', :_action => 'doSave content target="controller"' } Save
+    =hb 'linkTo plans.index', :classNames => 'btn' do
+      Close

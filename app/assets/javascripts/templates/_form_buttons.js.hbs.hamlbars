@@ -1,0 +1,6 @@
+=hb 'unless controller.inAction' do
+  .btn-group.pull-right
+    %a.btn.btn-primary{:href => '#', :_action => 'doSave content target="controller"' } Save
+    =hb 'if controller.canModelDoDetails' do
+      %a.btn{:href => '#', :_action => 'doDetails content target="controller"' } Details
+    %a.btn{:href => '#', :_action => 'doCancel  content target="controller"' } Cancel
